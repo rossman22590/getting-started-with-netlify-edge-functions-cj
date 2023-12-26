@@ -1,51 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting started with Netlify Edge Functions</title>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ross: The Developer</title>
     <style>
-      * {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-          "Open Sans", "Helvetica Neue", sans-serif;
-      }
-
-      body {
-        max-width: 600px;
-        margin: auto;
-        line-height: 1.3;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e9ecef;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        header p {
+            margin: 10px 0 20px;
+            color: #6c757d;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .about-me {
+            flex-basis: 48%;
+        }
+        .about-me p {
+            line-height: 1.6;
+        }
+        .skills {
+            flex-basis: 48%;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills ul li {
+            background: #007bff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #007bff;
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .about-me, .skills {
+                flex-basis: 100%;
+            }
+            .skills ul li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>Getting started with Netlify Edge Functions</h1>
-    <p>Hello and welcome to the tutorial!</p>
-    <p>This tutorial will take you through using Edge Functions on Netlify to build the following URLs:</p>
+</head>
+<body>
 
-    <div>
-      <h2>1. Hello, world</h2>
-      <p>
-        We'll write an Edge Function to serve the text
-        <code>Hello, World from the edge!</code>
-      </p>
-      <a href="/hello">/hello</a>
+    <div class="container">
+        <header>
+            <h1>Ross: The Developer</h1>
+            <p>Expert in Web Development & Programming</p>
+        </header>
+        <div class="main-content">
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm Ross, a developer with over 10 years of experience in crafting web applications and services. I've worked with a variety of technologies and I'm constantly learning and adapting to new challenges.
+                </p>
+                <p>
+                    When I'm not coding, you might find me contributing to open-source projects, blogging about tech trends or running developer workshops. Let's connect and create something spectacular together!
+                </p>
+            </div>
+            <div class="skills">
+                <h2>My Skills</h2>
+                <ul>
+                    <li>Full Stack Development</li>
+                    <li>React & Angular</li>
+                    <li>Node.js & Express</li>
+                    <li>Database Management</li>
+                    <li>API Development</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>Find me on <a href="https://github.com/ross-dev" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/ross-dev" target="_blank">LinkedIn</a> | <a href="https://twitter.com/ross-dev" target="_blank">Twitter</a></p>
+        </footer>
     </div>
 
-    <div>
-      <h2>2. Serve an HTML template</h2>
-      <p>We'll set up the project to serve static HTML template files from the /public directory.</p>
-      <a href="/hello-html">/hello-html</a>
-    </div>
-
-    <div>
-      <h2>3. Add location data to the HTML template</h2>
-      <p>
-        We'll write an Edge Function to intercept a static HTML template and update it using geolocation data at the
-        edge.
-      </p>
-      <a href="/hello-html?method=transform">/hello-html?method=transform</a>
-    </div>
-  </body>
+</body>
 </html>
